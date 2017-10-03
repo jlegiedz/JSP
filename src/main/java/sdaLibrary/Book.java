@@ -10,6 +10,10 @@ public class Book {
     private Author author;
     private BookGenre genre;
 
+
+    public Book(){
+
+    }
     public Book(String title, String isbn, Integer pageCount, Author author, BookGenre genre) {
         this.title = title;
         this.isbn = isbn;

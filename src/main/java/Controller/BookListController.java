@@ -1,33 +1,46 @@
 package Controller;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import sdaLibrary.Book;
+import sdaLibrary.BookGenre;
+import sdaLibrary.ModelAndViewWithMenu;
 import sdaRandom.BookGenerator;
 import java.util.List;
 
-/**
- * Created by RENT on 2017-10-02.
- */
+
 @Controller
 public class BookListController {
 
+    @RequestMapping(value="/")
+    public ModelAndView startPage(){
+        ModelAndView model = new ModelAndViewWithMenu();
+        model.setViewName("mainPage.jsp");
+        return model;
+    }
     // po parametrze books wywola sie ta metoda
     @RequestMapping(value="/books")
     public ModelAndView getBooks(){
-        ModelAndView model = new ModelAndView();
+        ModelAndView model = new ModelAndViewWithMenu();
         List<Book> list = BookGenerator.listGenerator(3);
 
         //jak bedziesz sie odwolywal do parametru o nazwie list dostaniesz liste ksiazek:
         // to jest w jsp jako item
         model.addObject("list",list);
 
-        // do tego modelu bedzie meic dostep booklist.jsp i ja wygeneruj
+        // do tego modelu bedzie mic dostep booklist.jsp i ja wygeneruj
         // uzytkownik nie wie o jsp- uzytkownik wpisuje /books
         model.setViewName("bookController.jsp");
         return model;
 
+    }
+
+    @RequestMapping(value="/books/add")
+    public ModelAndView addBookPage(){
+        ModelAndView model = new ModelAndViewWithMenu();
+        model.addObject("genreList", BookGenre.values());
+        model.setViewName("addBook.jsp");
+        return model;
     }
 
 

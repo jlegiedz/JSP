@@ -1,0 +1,27 @@
+package sdaLibrary;
+
+/**
+ * Created by RENT on 2017-10-03.
+ */
+public enum Element {
+    INDEX("Strona glowna","/"),
+    ADD_BOOKS("Dodawanie ksiazek","/books/add"),
+    BOOKS_LIST("Lista ksiazek","/books"),
+    BOOK_RESERVATION("Wypozyczanie ksiazek","/books/reservation");
+
+    private String elementName;
+    private String url;
+
+    Element(String elementName, String url) {
+        this.elementName = elementName;
+        this.url = url;
+    }
+
+    public String getElementName() {
+        return elementName;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+}

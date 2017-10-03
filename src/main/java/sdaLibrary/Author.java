@@ -14,6 +14,10 @@ public class Author {
         this.countryCode = countryCode;
     }
 
+    public Author() {
+
+    }
+
     public String getName() {
         return name;
     }
