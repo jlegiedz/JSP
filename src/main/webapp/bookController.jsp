@@ -22,6 +22,7 @@
                 <td style="border:1px solid black"> TYTUL </td>
                 <td style="border:1px solid black"> AUTOR </td>
                 <td style="border:1px solid black"> LICZBA STRON </td>
+                <td style="border:1px solid black"> OPCJE </td>
             </tr><br/>
         <c:forEach items="${list}" var="book">
 
@@ -29,6 +30,7 @@
                 <td style="border:1px solid black">${book.getTitle()}</td>
                 <td style="border:1px solid black">${book.getAuthor().toString()}</td>
                 <td style="border:1px solid black">${book.getPageCount()}</td>
+                <td style="border:1px solid black"> <a href="/books/reservation?bookId=${book.getId()}"> Zarezerwuj </a></td>
             </tr>
         </c:forEach>
     </table>

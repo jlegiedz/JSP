@@ -1,9 +1,8 @@
 package sdaLibrary;
 
-/**
- * Created by RENT on 2017-10-02.
- */
+
 public class Book {
+    private int id;
     private String title;
     private String isbn;
     private Integer pageCount;
@@ -20,6 +19,14 @@ public class Book {
         this.pageCount = pageCount;
         this.author = author;
         this.genre = genre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Author getAuthor() {

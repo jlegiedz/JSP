@@ -6,6 +6,13 @@ import java.util.Random;
  * Created by RENT on 2017-09-29.
  */
 public class RandomNumberGenerator {
+    private static int ID_SEQUENCE = 0;
+
+
+    public static int getNextSequence(){
+        return  ++ID_SEQUENCE;
+    }
+
     public static String drawLottoNumbers(){
         Random random = new Random();
         StringBuilder sb = new StringBuilder();

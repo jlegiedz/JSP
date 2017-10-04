@@ -1,8 +1,6 @@
 package sdaLibrary;
 
-/**
- * Created by RENT on 2017-10-03.
- */
+
 public enum Element {
     INDEX("Strona glowna","/"),
     ADD_BOOKS("Dodawanie ksiazek","/books/add"),

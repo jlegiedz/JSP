@@ -1,10 +1,14 @@
 package Controller;
+import BookRepository.BookRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import sdaLibrary.Book;
 import sdaLibrary.BookGenre;
 import sdaLibrary.ModelAndViewWithMenu;
+import sdaLibrary.Nationality;
 import sdaRandom.BookGenerator;
 import java.util.List;
 
@@ -22,7 +26,7 @@ public class BookListController {
     @RequestMapping(value="/books")
     public ModelAndView getBooks(){
         ModelAndView model = new ModelAndViewWithMenu();
-        List<Book> list = BookGenerator.listGenerator(3);
+        List<Book> list = BookRepository.getBookList();
 
         //jak bedziesz sie odwolywal do parametru o nazwie list dostaniesz liste ksiazek:
         // to jest w jsp jako item
@@ -42,6 +46,20 @@ public class BookListController {
         model.setViewName("addBook.jsp");
         return model;
     }
+
+    @RequestMapping(value="/books/reservation")
+    public ModelAndView bookReservationPage(@RequestParam(name = "bookId") /*required= false */String id){
+        ModelAndView model = new ModelAndViewWithMenu();
+        model.addObject("book", BookRepository.getBook(id));
+        model.addObject("nationalityList", Nationality.values());
+        model.setViewName("reservation.jsp");
+        return model;
+    }
+
+
+
+
+
 
 
 }

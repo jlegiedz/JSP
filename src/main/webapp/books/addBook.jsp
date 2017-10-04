@@ -16,8 +16,9 @@
 </div>
 
 <div style="float:right; width:80%">
- <%--action to bedzie sciezka do metody w Controllerze;
- nazwy inputa musza byc takie same jak pola w klasie book--%>
+ <%--action---> sciezka do metody w Controllerze;
+ nazwy inputa musza byc takie same jak pola w klasie book;
+ nazwa form: pojawia sie --%>
   <form name="bookForm" action="/addBook" method="post">
       <label> Tytul ksiazki: </label> <input type="text" name="title"/>
       <label> ISBN: </label> <input type="text" name="isbn"/>
