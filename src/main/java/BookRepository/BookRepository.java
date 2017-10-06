@@ -14,11 +14,12 @@ public class BookRepository {
         list.add(book);
     }
 
+
     public static List<Book> getBookList(){
         return list;
     }
 
-    public static Book getBook(String id){
+    public static Book getBookById(String id){
         if(id == null){
             return null;
         }

@@ -47,10 +47,11 @@ public class BookListController {
         return model;
     }
 
+    //klik na link Rezerwuj:
     @RequestMapping(value="/books/reservation")
-    public ModelAndView bookReservationPage(@RequestParam(name = "bookId") /*required= false */String id){
+    public ModelAndView bookReservationPage(@RequestParam(name = "bookId") String id){
         ModelAndView model = new ModelAndViewWithMenu();
-        model.addObject("book", BookRepository.getBook(id));
+        model.addObject("book", BookRepository.getBookById(id));
         model.addObject("nationalityList", Nationality.values());
         model.setViewName("reservation.jsp");
         return model;

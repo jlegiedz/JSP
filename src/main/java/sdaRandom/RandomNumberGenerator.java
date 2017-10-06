@@ -7,10 +7,15 @@ import java.util.Random;
  */
 public class RandomNumberGenerator {
     private static int ID_SEQUENCE = 0;
+    private static int ID_USER = 0;
 
 
     public static int getNextSequence(){
         return  ++ID_SEQUENCE;
+    }
+
+    public static int getNextSequenceForUser(){
+        return ++ID_USER;
     }
 
     public static String drawLottoNumbers(){

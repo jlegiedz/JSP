@@ -16,8 +16,6 @@
 
 <div style="float:right; width:80%">
     <table style="border:2px solid black; width:80%">
-        <%--taglib z imporu pozwalajcy odwolac sie do bibl--%>
-        <%--book to jak zmienna tymczasowa po ktorej sie odwolujemy do elemntow listy--%>
             <tr style="border:1px solid black">
                 <td style="border:1px solid black"> TYTUL </td>
                 <td style="border:1px solid black"> AUTOR </td>

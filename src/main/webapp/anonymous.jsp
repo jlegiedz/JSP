@@ -15,12 +15,9 @@
 </div>
 
 <div style="float:right; width:80%">
-
+    <p> Zalogowany uzytkownik - ${loggedUser}</p>
     <img src ="http://www.piszanin.pl/imgfiles2/ksizaka3(1).jpg"></a>
-<h3>Witaj uzytkowniku, czy chcesz sie wylogowac?<h3/>
-<form action = "/logout.jsp" method="post">
-    <input type="submit"  value="Wyloguj z systemu"/>
-</form>
+
 </div>
 
 </body>

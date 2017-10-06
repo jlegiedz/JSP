@@ -3,6 +3,7 @@ package sdaLibrary;
 
 public class User {
 
+    private int Id;
     private String name;
     private String surname;
     private Address address;
@@ -21,6 +22,15 @@ public class User {
         this.nationality = nationality;
         this.pesel = pesel;
         this.passportNumber = passportNumber;
+    }
+
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getPesel() {

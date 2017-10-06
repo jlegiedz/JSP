@@ -1,8 +1,5 @@
 package sdaLibrary;
 
-/**
- * Created by RENT on 2017-10-02.
- */
 public enum BookGenre {
     EPOS("Epopeja"),DRAMA("Dramat"), THRILLER("Thriller"), COMEDY("Komedia"),STORY("Powiesc");
 
