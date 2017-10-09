@@ -10,6 +10,8 @@ public class User {
     private Nationality nationality;
     private String pesel;
     private String passportNumber;
+    private String login;
+    private String password;
 
 
     public User(){
@@ -22,8 +24,24 @@ public class User {
         this.nationality = nationality;
         this.pesel = pesel;
         this.passportNumber = passportNumber;
+
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public int getId() {
         return Id;
@@ -79,5 +97,21 @@ public class User {
 
     public void setNationality(Nationality nationality) {
         this.nationality = nationality;
+    }
+
+
+    public static boolean doValidation(User user){
+        boolean valid;
+        if(user.getNationality()== Nationality.PL && user.getPesel()!=""){
+            valid = true;
+        }
+        else if(user.getNationality()!=Nationality.PL && user.getPassportNumber()!=""){
+            valid = true;
+        }
+        else{
+            valid=false;
+        }
+        return valid;
+
     }
 }

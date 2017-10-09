@@ -14,11 +14,7 @@
     <%@include file="menu.jsp"%>
 </div>
 
-<div style="float:right; width:80%">
-    <p> Zalogowany uzytkownik - ${loggedUser}</p>
-    <img src ="http://www.piszanin.pl/imgfiles2/ksizaka3(1).jpg"></a>
 
-</div>
 
 </body>
 </html>

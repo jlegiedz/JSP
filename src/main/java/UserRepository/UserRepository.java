@@ -27,8 +27,16 @@ public class UserRepository {
         User result = userList.stream().
                     filter(user -> (Integer.toString(user.getId()).equals(id))).findAny().orElse(null);
         return result;
-
     }
 
 
+    public static boolean isUserRegistered(String login) {
+        boolean result = false;
+        User resultLogin = userList.stream().
+                filter(user -> user.getLogin().equals(login)).findAny().orElse(null);
+        if (resultLogin != null) {
+            result = true;
+        }
+        return result;
+    }
 }

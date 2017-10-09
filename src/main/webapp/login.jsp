@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title> Biblioteka </title>
+    <title> Logowanie </title>
 </head>
 <body>
 
@@ -16,13 +16,15 @@
 </div>
 
 <div style="float:right; width:80%">
-    <p> Zalogowany uzytkownik - ${loggedUser}</p>
-    <img src ="http://www.piszanin.pl/imgfiles2/ksizaka3(1).jpg"></a>
-<h3>Witaj ${loggedUser}, czy chcesz sie wylogowac?</h3>
+    <img src ="http://www.piszanin.pl/imgfiles2/ksizaka3(1).jpg"></a
 
-<form action = "/logout.jsp" method="post">
-    <input type="submit"  value="Wyloguj z systemu"/>
-</form>
+    <p> Podaj login i haslo: </p>
+
+    <form name="login" action="/loginUser" method="post">
+    <label> Nazwa uzytkownika </label> <input type="text" name="login"/>
+    <label> Haslo </label> <input type="text" name="password"/>
+    <input type="submit" name="Zatwierdz dane">
+    </form>
 </div>
 
 </body>

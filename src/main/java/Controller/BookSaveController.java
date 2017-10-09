@@ -55,7 +55,7 @@ public class BookSaveController {
                            @ModelAttribute("bookId") String bookId,
                            HttpServletResponse response,
                            HttpServletRequest request){
-        boolean valid = doValidation(user);
+        boolean valid = User.doValidation(user);
         if(!valid){
             return "redirect:/books/reservation?bookId="+ bookId +"&validationError=true";
         }
@@ -69,20 +69,7 @@ public class BookSaveController {
 
 
 
-    public boolean doValidation(User user){
-       boolean valid;
-        if(user.getNationality()== Nationality.PL && user.getPesel()!=""){
-            valid = true;
-        }
-        else if(user.getNationality()!=Nationality.PL && user.getPassportNumber()!=""){
-            valid = true;
-        }
-        else{
-            valid=false;
-        }
-        return valid;
 
-    }
 
 
 }
